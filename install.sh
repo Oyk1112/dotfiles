@@ -1,14 +1,16 @@
 #!/bin/bash
 function install_prepare_software() {
 
-	sudo apt-get install git gcc g++
+	sudo apt-get install -y git gcc g++
 
 }
 
 function install_tmux() {
 
-	sudo apt-get install tmux
-	sudo apt-get install powerline
+	sudo apt-get install -y tmux
+	sudo apt-get install -y powerline
+	git clone https://github.com/powerline/fonts ~
+	fonts/install.sh
 	rm -rf ~/.tmux.conf
 	rm -rf ~/.tmux.conf.local
 	cp .tmux.conf ~
@@ -18,18 +20,19 @@ function install_tmux() {
 
 function install_zsh() {
 
-	sudo apt-get install zsh
+	sudo apt-get install -y zsh
 	sudo chsh -s /bin/zsh
 	rm -rf ~/.zshrc
 	cp .zshrc ~
 	git clone https://github.com/robbyrussell/oh-my-zsh ~
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 }
 
 function install_neovim() {
 
-	sudo apt-get install neovim vim-gtk3 vim-youcompleteme exbuerant-ctag python3-pip
+	sudo apt-get install -y neovim vim-gtk3 vim-youcompleteme python3-pip
+	sudo apt-get install exbuerant-ctags
 	sudo pip3 install --upgrade neovim
 
 	rm -rf ~/.vimrc
@@ -49,8 +52,7 @@ function install_neovim() {
     nvim -c "PluginInstall" -c "qa"
 
     git clone https://github.com/ryanoasis/nerd-fonts ~
-	cd ~/nerd-fonts
-	./install.sh
+	nerd-fonts/install.sh
 
 }
 
