@@ -21,11 +21,11 @@ function install_tmux() {
 function install_zsh() {
 
 	sudo apt-get install -y zsh
-        chsh -s /bin/zsh
+    chsh -s /bin/zsh
 	rm -rf ~/.zshrc
 	cp .zshrc ~
 	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 }
 
@@ -50,7 +50,7 @@ function install_neovim() {
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     	nvim -c "PluginInstall" -c "qa"
 
-    	git clone https://github.com/ryanoasis/nerd-fonts ~/nerd-fonts
+   	git clone https://github.com/ryanoasis/nerd-fonts ~/nerd-fonts
 	~/nerd-fonts/install.sh
 
 }
