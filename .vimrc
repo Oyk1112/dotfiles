@@ -38,15 +38,15 @@
 
 " }
 
-" Use Bundle if available {
-    if filereadable(expand("~/Bundle.vim"))
-         source ~/Bundle.vim
+" Use Vundle if available {
+    if filereadable(expand("~/.vimrc.plugin"))
+         source ~/.vimrc.plugin
     endif
 " }
 
-" Use Bundles Config {
-    if filereadable(expand("~/BundleConfig.vim"))
-         source ~/BundleConfig.vim
+" Use Plug-in Config {
+    if filereadable(expand("~/.vimrc.conf"))
+         source ~/.vimrc.conf
     endif
 " }
 

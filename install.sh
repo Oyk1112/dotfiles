@@ -35,14 +35,14 @@ function install_neovim() {
 	sudo pip3 install --upgrade neovim
 
 	rm -rf ~/.vimrc
-	rm -rf ~/Bundle.vim
-	rm -rf ~/BundleConfig.vim
+	rm -rf ~/.vimrc.plugin
+	rm -rf ~/.vimrc.conf
 	rm -rf ~/.ycm_extra_conf.py
 	rm -rf ~/.vim
 	mkdir ~/.vim
 	cp .vimrc ~
-	cp Bundle.vim ~
- 	cp BundleConfig.vim ~
+	cp .vimrc.plugin ~
+ 	cp .vimrc.conf ~
 	cp .ycm_extra_conf.py ~
 	ln -s ~/.vim ~/.config/nvim
 	ln -s ~/.vimrc ~/.config/nvim/init.vim
