@@ -23,7 +23,9 @@
 
 " ColorScheme {
 
+     if isdirectory(expand("~/.vim/bundle/molokai"))
      colorscheme molokai           " Load a colorscheme
+     endif
 
 " }
 
