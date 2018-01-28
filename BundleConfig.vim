@@ -12,7 +12,8 @@
 
     " YouCompleteMe {
 
-        if isdirectory(expand("~/.vim/bundle/YouCompleteMe"))
+        if isdirectory(expand("/usr/share/vim-youcompleteme"))
+	set rtp+=/usr/share/vim-youcompleteme
         let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
         let g:ycm_server_python_interpreter='/usr/bin/python'
         endif
