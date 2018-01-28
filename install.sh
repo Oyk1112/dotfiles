@@ -24,7 +24,7 @@ function install_zsh() {
         chsh -s /bin/zsh
 	rm -rf ~/.zshrc
 	cp .zshrc ~
-	git clone https://github.com/robbyrussell/oh-my-zsh ~
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 }
